@@ -3,24 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 'Netbeans' };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="Netbeans">Netbeans</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Haskell">Haskell</option>
+            <option value=" C++"> C++</option>
+            <option value="Scheme">Scheme</option>
+          </select>
+        </label>
+
+
+      </form>
     );
   }
 }
